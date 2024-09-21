@@ -44,7 +44,7 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga odio assumenda minus quaerat ex quisquam similique tempora aperiam asperiores eos. Fugiat saepe voluptatum aut! Alias magni dolores quia id placeat!
 
                         <div class="tab-titles">
-                            <p class="tab-links active-link" onclick="opeantab('Skills')">Skills</p>
+                            <p class="tab-links active-link" onclick="opeantab('skills')">Skills</p>
                             <p class="tab-links" onclick="opeantab('Experience')">Experience</p>
                             <p class="tab-links" onclick="opeantab('Education')">Education</p>
                         </div>
@@ -169,17 +169,33 @@
     <script>
         var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
-        function opeantab(tabname){
-            for(tablink of tablinks){
+    
+        function opeantab(tabname) {
+            for (var tablink of tablinks) {
                 tablink.classList.remove("active-link");
             }
-            for(tabcontent of tabcontents){
+            for (var tabcontent of tabcontents) {
                 tabcontent.classList.remove("active-tab");
             }
             event.currentTarget.classList.add("active-link");
             document.getElementById(tabname).classList.add("active-tab");
         }
+    
+        var sidemenu = document.getElementById("sidemenu");
+    
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+    
+        // Add fade-in for header text on page load
+        window.onload = function() {
+            document.querySelector('.hearder-text').classList.add('fadeIn');
+        };
     </script>
+    
     <script>
 
         var sidemenu = document.getElementById("sidemenu");
