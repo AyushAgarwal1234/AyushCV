@@ -14,7 +14,7 @@ body{
 #header{
     width: 100%;
     height: 100vh;
-    background-image: url(tp.jpg);
+    /* background-image: url(tp.jpg); */
     background-size: cover;
     background-position: center;
 }
@@ -371,4 +371,34 @@ nav .fa-solid{
     .copyright{
         font-size: 14px;
     }
+}
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Apply fade-in to header text */
+.hearder-text {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.services-list div, .work-list .work {
+    /* New hover animation for services and portfolio */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.services-list div:hover, .work-list .work:hover {
+    transform: scale(1.05); /* Slight scale up on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth transition for tabs */
+.tab-contents {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.tab-contents.active-tab {
+    opacity: 1;
 }
